@@ -20,7 +20,10 @@ export const CURATED_TRACKS: Track[] = [
       { time: 5, text: "The club isn't the best place to find a lover" },
       { time: 10, text: "So the bar is where I go" },
       { time: 13, text: "Me and my friends at the table doing shots" },
-      { time: 17, text: "Drinking fast and then we talk slow" }
+      { time: 17, text: "Drinking fast and then we talk slow" },
+      { time: 22, text: "And you come over and start up a conversation with just me" },
+      { time: 30, text: "I'm in love with the shape of you" },
+      { time: 38, text: "We push and pull like a magnet do" }
     ],
     comments: [
       { id: 'c1', author: 'Music Lover', avatar: 'M', text: 'This song is literally immortal. 6 Billion views is just insane!', likes: '450K', time: '3 years ago' }
@@ -41,95 +44,116 @@ export const CURATED_TRACKS: Track[] = [
     audioBgGradient: 'linear-gradient(135deg, #f12711, #f5af19)',
     lyrics: [
       { time: 0, text: "🎵 [Blinding Lights - 80s Synth Intro] 🎵" },
-      { time: 8, text: "Yeah..." },
-      { time: 11, text: "I've been tryna call" }
+      { time: 10, text: "Yeah... I've been tryna call" },
+      { time: 15, text: "I've been on my own for long enough" },
+      { time: 20, text: "Maybe you can show me how to love, maybe" },
+      { time: 25, text: "I'm going through withdrawals" },
+      { time: 32, text: "I said, ooh, I'm blinded by the lights" },
+      { time: 42, text: "No, I can't sleep until I feel your touch" }
     ],
     comments: [
-      { id: 'c4', author: 'Retro Boy', avatar: 'R', text: 'He revived the 80s synth wave vibe and made it a global masterpiece.', likes: '280K', time: '3 years ago' }
+      { id: 'c2', author: 'Retro Boy', avatar: 'R', text: 'This song redefined pop music in the 2020s. Masterpiece!', likes: '220K', time: '2 years ago' }
     ]
   },
   {
     id: 'kTJczUoc26U',
     title: 'STAY (Official Music Video)',
     artist: 'The Kid LAROI & Justin Bieber',
-    duration: '2:21',
+    duration: '2:38',
     category: 'music',
-    views: '340M views',
-    likes: '9.2M likes',
+    views: '920M views',
+    likes: '14M likes',
     channel: 'The Kid LAROI',
     channelAvatar: 'K',
-    subscribers: '5M subscribers',
+    subscribers: '6.5M subscribers',
     publishedAt: '3 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #8a2387, #e94057, #f27121)',
+    audioBgGradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
     lyrics: [
-      { time: 0, text: "🎵 [Stay - Energetic Synth Intro] 🎵" },
-      { time: 4, text: "I do the same thing I told you that I never would" }
+      { time: 0, text: "🎵 [STAY - Fast Pop Intro] 🎵" },
+      { time: 5, text: "I do the same thing I told you that I never would" },
+      { time: 9, text: "I told you I'd change, even when I knew I never could" },
+      { time: 13, text: "I know that I can't find nobody else as good as you" },
+      { time: 18, text: "I need you to stay, need you to stay, hey" }
     ],
     comments: [
-      { id: 'c6', author: 'Bieber Stan', avatar: 'B', text: 'Justin\'s verse on this is so smooth. This duo goes incredibly hard!', likes: '140K', time: '2 years ago' }
+      { id: 'c3', author: 'Sarah K', avatar: 'S', text: 'Justin Bieber and Laroi vocal combination was perfection here!', likes: '89K', time: '1 year ago' }
     ]
   },
   {
     id: 'H5v3kku4y6Q',
     title: 'As It Was (Official Music Video)',
     artist: 'Harry Styles',
-    duration: '2:45',
+    duration: '2:47',
     category: 'music',
-    views: '620M views',
-    likes: '11M likes',
+    views: '710M views',
+    likes: '8.4M likes',
     channel: 'Harry Styles',
     channelAvatar: 'H',
     subscribers: '15M subscribers',
     publishedAt: '2 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #11998e, #38ef7d)',
+    audioBgGradient: 'linear-gradient(135deg, #ff4e50, #f9d423)',
     lyrics: [
-      { time: 0, text: "🎵 [As It Was - Retro Electronic Beat] 🎵" },
-      { time: 6, text: "Holdin' me back" }
+      { time: 0, text: "🎵 [Chiming Bell Intro] 🎵" },
+      { time: 4, text: "Hold on, ring the bell" },
+      { time: 9, text: "You know you're no good alone" },
+      { time: 14, text: "Why are you sitting on the floor?" },
+      { time: 22, text: "You know it's not the same as it was" },
+      { time: 29, text: "As it was, as it was" }
     ],
     comments: [
-      { id: 'c8', author: 'Styles Club', avatar: 'S', text: 'The melancholic lyrics combined with the happy instrumental is genius.', likes: '95K', time: '2 years ago' }
+      { id: 'c4', author: 'Maya L', avatar: 'M', text: 'The bridge of this song feels like pure nostalgia.', likes: '95K', time: '1 year ago' }
     ]
   },
   {
     id: 'G7KNmW9a75Y',
     title: 'Flowers (Official Music Video)',
     artist: 'Miley Cyrus',
-    duration: '3:21',
+    duration: '3:20',
     category: 'music',
-    views: '820M views',
-    likes: '14M likes',
+    views: '880M views',
+    likes: '11M likes',
     channel: 'Miley Cyrus',
     channelAvatar: 'M',
-    subscribers: '20M subscribers',
+    subscribers: '21M subscribers',
     publishedAt: '1 year ago',
-    audioBgGradient: 'linear-gradient(135deg, #FF416C, #FF4B2B)',
+    audioBgGradient: 'linear-gradient(135deg, #f857a6, #ff5858)',
     lyrics: [
-      { time: 0, text: "🎵 [Flowers - Modern Funky Bassline Intro] 🎵" },
-      { time: 5, text: "We were good, we were gold" }
+      { time: 0, text: "🎵 [Upbeat Disco-Pop Rhythm] 🎵" },
+      { time: 8, text: "We were good, we were gold" },
+      { time: 14, text: "Kinda dream that can't be sold" },
+      { time: 22, text: "I can buy myself flowers" },
+      { time: 28, text: "Write my name in the sand" },
+      { time: 35, text: "I can take myself dancing" },
+      { time: 42, text: "And I can hold my own hand" }
     ],
     comments: [
-      { id: 'c9', author: 'Self Love', avatar: 'S', text: 'This has become the ultimate anthem for independence and self-healing.', likes: '180K', time: '1 year ago' }
+      { id: 'c5', author: 'Emma Watson Fan', avatar: 'E', text: 'Self-love anthem of the decade!', likes: '130K', time: '10 months ago' }
     ]
   },
   {
-    id: 'YykjpeuM6ME',
-    title: 'Hymn For The Weekend (Official Music Video)',
+    id: 'dvgZkm1xWPE',
+    title: 'Viva La Vida (Official Video)',
     artist: 'Coldplay',
-    duration: '4:20',
+    duration: '4:02',
     category: 'music',
-    views: '1.9B views',
-    likes: '22M likes',
+    views: '930M views',
+    likes: '7.8M likes',
     channel: 'Coldplay',
     channelAvatar: 'C',
     subscribers: '26M subscribers',
-    publishedAt: '8 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #2b5876, #4e4376)',
+    publishedAt: '15 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #1d2b64, #f8cdda)',
     lyrics: [
-      { time: 0, text: "🎵 [Hymn For The Weekend - Atmospheric Ambient Intro] 🎵" },
-      { time: 10, text: "Drink from me, drink from me" }
+      { time: 0, text: "🎵 [Swelling Symphonic Strings] 🎵" },
+      { time: 13, text: "I used to roll the dice" },
+      { time: 17, text: "Feel the fear in my enemy's eyes" },
+      { time: 21, text: "Listen as the crowd would sing" },
+      { time: 25, text: "Now the old king is dead, long live the king" },
+      { time: 34, text: "One minute I held the key" },
+      { time: 38, text: "Next the walls were closed on me" }
     ],
     comments: [
-      { id: 'c10', author: 'Coldplay Fanatic', avatar: 'C', text: 'Beyonce\'s vocals in the background combined with Chris Martin is beautiful!', likes: '120K', time: '5 years ago' }
+      { id: 'c6', author: 'Classic Rocker', avatar: 'C', text: 'A song that will genuinely outlive our generation.', likes: '210K', time: '4 years ago' }
     ]
   },
   {
@@ -142,333 +166,335 @@ export const CURATED_TRACKS: Track[] = [
     likes: '8.1M likes',
     channel: 'Adele',
     channelAvatar: 'A',
-    subscribers: '30M subscribers',
+    subscribers: '31M subscribers',
     publishedAt: '2 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #3a7bd5, #3a6073)',
+    audioBgGradient: 'linear-gradient(135deg, #2c3e50, #3498db)',
     lyrics: [
-      { time: 0, text: "🎵 [Easy On Me - Melodious Piano Intro] 🎵" },
-      { time: 10, text: "There is no gold in this river" }
+      { time: 0, text: "🎵 [Soulful Piano Chords] 🎵" },
+      { time: 12, text: "There ain't no gold in this river" },
+      { time: 18, text: "That I've been washin' my hands in forever" },
+      { time: 25, text: "I know there is hope in these waters" },
+      { time: 34, text: "Go easy on me, baby" },
+      { time: 42, text: "I was still a child" }
     ],
     comments: [
-      { id: 'c17', author: 'Soul Music Fan', avatar: 'S', text: 'Adele\'s piano ballads have this magical way of pulling your heart strings.', likes: '84K', time: '2 years ago' }
+      { id: 'c7', author: 'Harmony', avatar: 'H', text: 'Her voice brings instant tears. She is an absolute titan.', likes: '78K', time: '1 year ago' }
+    ]
+  },
+  {
+    id: 'TUVcZfQe-Kw',
+    title: 'Levitating (Official Music Video)',
+    artist: 'Dua Lipa',
+    duration: '3:23',
+    category: 'music',
+    views: '890M views',
+    likes: '9.2M likes',
+    channel: 'Dua Lipa',
+    channelAvatar: 'D',
+    subscribers: '23M subscribers',
+    publishedAt: '3 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #8a2387, #e94057, #f27121)',
+    lyrics: [
+      { time: 0, text: "🎵 [Funky Future-Disco Intro] 🎵" },
+      { time: 8, text: "If you wanna run away with me, I know a galaxy" },
+      { time: 13, text: "And I can take you for a ride" },
+      { time: 22, text: "Glitter in the sky, glitter in my eyes" },
+      { time: 30, text: "My sugarboo, I'm levitating" }
+    ],
+    comments: [
+      { id: 'c8', author: 'Disco Dave', avatar: 'D', text: 'This groove will never get old!', likes: '65K', time: '2 years ago' }
     ]
   },
 
-  // --- FOOD ---
+  // --- CREATORS & ENTERTAINMENT ---
   {
-    id: '53me-WYvfzY',
-    title: 'Uncle Roger Egg Fried Rice Review (Lao Gan Ma)',
-    artist: 'Uncle Roger',
-    duration: '10:14',
-    category: 'food',
-    views: '24M views',
-    likes: '1.2M likes',
-    channel: 'mrnigelng',
-    channelAvatar: 'U',
-    subscribers: '9.2M subscribers',
-    publishedAt: '3 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #ff9900, #ff5500)',
+    id: '7IKab3HcfFk',
+    title: 'I Survived 50 Hours In Antarctica | MrBeast',
+    artist: 'MrBeast',
+    duration: '12:06',
+    category: 'creators',
+    views: '160M views',
+    likes: '6.8M likes',
+    channel: 'MrBeast',
+    channelAvatar: 'M',
+    subscribers: '310M subscribers',
+    publishedAt: '1 year ago',
+    audioBgGradient: 'linear-gradient(135deg, #00c6ff, #0072ff)',
     lyrics: [
-      { time: 0, text: "🎵 [Upbeat Cooking Theme Music] 🎵" },
-      { time: 3, text: "Haiyaaa, Uncle Roger back with another egg fried rice review!" },
-      { time: 8, text: "Don't use colander for rice, use the finger trick!" }
+      { time: 0, text: "❄️ [Freezing Arctic Wind Blowing] ❄️" },
+      { time: 3, text: "We just landed in Antarctica, the coldest place on Earth!" },
+      { time: 10, text: "Our goal is to survive 50 hours in negative 30 degrees." }
     ],
     comments: [
-      { id: 'cf1', author: 'Jamie Fan', avatar: 'J', text: 'Uncle Roger is absolutely hilarious! MSG is the king of flavor!', likes: '12K', time: '2 years ago' }
+      { id: 'c9', author: 'Adventure Seeker', avatar: 'A', text: 'The cinematography in this video was unreal.', likes: '89K', time: '1 year ago' }
+    ]
+  },
+  {
+    id: 'h4T_LlK1VE4',
+    title: 'Glitterbomb 3.0 vs. Porch Pirates',
+    artist: 'Mark Rober',
+    duration: '22:15',
+    category: 'creators',
+    views: '92M views',
+    likes: '4.5M likes',
+    channel: 'Mark Rober',
+    channelAvatar: 'M',
+    subscribers: '58M subscribers',
+    publishedAt: '3 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #f7971e, #ffd200)',
+    lyrics: [
+      { time: 0, text: "📦 [Custom Engineering Sound Effects] 📦" },
+      { time: 5, text: "For the third year in a row, I engineered a high-tech bait package." }
+    ],
+    comments: [
+      { id: 'c10', author: 'Tech Geek', avatar: 'T', text: 'Mark Rober is a national treasure.', likes: '120K', time: '2 years ago' }
     ]
   },
   {
     id: 'AmC9SmCBUj4',
     title: 'How To Cook A Perfect Steak | Gordon Ramsay',
     artist: 'Gordon Ramsay',
-    duration: '5:21',
+    duration: '4:52',
     category: 'food',
-    views: '45M views',
-    likes: '1.8M likes',
+    views: '94M views',
+    likes: '2.4M likes',
+    channel: 'Gordon Ramsay',
+    channelAvatar: 'G',
+    subscribers: '20M subscribers',
+    publishedAt: '6 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #ff416c, #ff4b2b)',
+    lyrics: [
+      { time: 0, text: "🥩 [Sizzling Cast Iron Pan] 🥩" },
+      { time: 5, text: "Today I'm going to show you how to cook the ultimate steak." },
+      { time: 15, text: "Seasoning is everything. Sea salt, fresh cracked pepper." }
+    ],
+    comments: [
+      { id: 'c11', author: 'Chef in Training', avatar: 'C', text: 'This video literally taught me how to cook.', likes: '95K', time: '3 years ago' }
+    ]
+  },
+  {
+    id: 'iM_KMYulI_s',
+    title: "Gordon Ramsay's Perfect Burger Tutorial",
+    artist: 'Gordon Ramsay',
+    duration: '5:40',
+    category: 'food',
+    views: '42M views',
+    likes: '1.2M likes',
     channel: 'Gordon Ramsay',
     channelAvatar: 'G',
     subscribers: '20M subscribers',
     publishedAt: '4 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #4b6cb7, #182848)',
+    audioBgGradient: 'linear-gradient(135deg, #e65c00, #f9d423)',
     lyrics: [
-      { time: 0, text: "🎵 [Intense Kitchen Sizzle Beat] 🎵" },
-      { time: 4, text: "The secret to a perfect steak is beautiful seasoning and garlic basting." },
-      { time: 10, text: "Make sure your pan is screaming hot!" }
+      { time: 0, text: "🍔 [Grill Sizzle and Smoke] 🍔" },
+      { time: 5, text: "The key to a phenomenal burger is high quality freshly ground beef." }
     ],
     comments: [
-      { id: 'cf2', author: 'Chef Wannabe', avatar: 'C', text: 'This basted technique changed the way I cook my ribeyes forever. Amazing!', likes: '8.4K', time: '1 year ago' }
+      { id: 'c12', author: 'Foodie', avatar: 'F', text: 'That brioche bun toast was perfection.', likes: '34K', time: '2 years ago' }
     ]
   },
 
-  // --- SPORTS ---
+  // --- SCIENCE & TECH ---
   {
-    id: 'v60V_H9fT8w',
-    title: 'Lionel Messi Legendary Inter Miami Debut Highlights',
-    artist: 'MLS Soccer',
-    duration: '12:45',
-    category: 'sports',
-    views: '18M views',
-    likes: '680K likes',
-    channel: 'MLS',
-    channelAvatar: 'M',
-    subscribers: '4.5M subscribers',
-    publishedAt: '1 year ago',
-    audioBgGradient: 'linear-gradient(135deg, #e10098, #ff66cc)',
+    id: 'pTn6Ewhb27k',
+    title: 'Why No One Has Measured The Speed Of Light',
+    artist: 'Veritasium',
+    duration: '18:12',
+    category: 'tech',
+    views: '35M views',
+    likes: '1.8M likes',
+    channel: 'Veritasium',
+    channelAvatar: 'V',
+    subscribers: '16M subscribers',
+    publishedAt: '3 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #141e30, #243b55)',
     lyrics: [
-      { time: 0, text: "⚽ [Crowd Roar & Match Commentary] ⚽" },
-      { time: 5, text: "Messi stands over the ball in the 94th minute..." },
-      { time: 10, text: "IT IS AN INCREDIBLE GOAL! MESSI HAS DONE IT ON HIS DEBUT!" }
+      { time: 0, text: "💡 [Cosmic Ambient Waves] 💡" },
+      { time: 5, text: "What is the speed of light? 300,000 kilometers per second, right?" },
+      { time: 15, text: "Well, we have only ever measured the two-way speed of light." }
     ],
     comments: [
-      { id: 'cs1', author: 'FootballFanatic', avatar: 'F', text: 'That free-kick in the last minute was pure movie script. Legendary!', likes: '15K', time: '1 year ago' }
+      { id: 'c13', author: 'Physics Mind', avatar: 'P', text: 'This video broke my brain in the best possible way.', likes: '90K', time: '2 years ago' }
+    ]
+  },
+  {
+    id: 'e-P5IFTqB98',
+    title: 'Black Holes Explained – From Birth to Death',
+    artist: 'Kurzgesagt – In a Nutshell',
+    duration: '11:15',
+    category: 'tech',
+    views: '48M views',
+    likes: '2.1M likes',
+    channel: 'Kurzgesagt',
+    channelAvatar: 'K',
+    subscribers: '22M subscribers',
+    publishedAt: '4 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)',
+    lyrics: [
+      { time: 0, text: "🌌 [Atmospheric Deep Space Ambience] 🌌" },
+      { time: 5, text: "Black holes are some of the strangest and most fascinating objects in outer space." }
+    ],
+    comments: [
+      { id: 'c14', author: 'Stargazer', avatar: 'S', text: 'The animation quality is beyond Hollywood level.', likes: '110K', time: '3 years ago' }
+    ]
+  },
+
+  // --- TRAILERS & GAMING ---
+  {
+    id: 'QdBZY2fkU-0',
+    title: 'Grand Theft Auto VI Trailer 1 (Official)',
+    artist: 'Rockstar Games',
+    duration: '1:31',
+    category: 'gaming',
+    views: '220M views',
+    likes: '11M likes',
+    channel: 'Rockstar Games',
+    channelAvatar: 'R',
+    subscribers: '11M subscribers',
+    publishedAt: '1 year ago',
+    audioBgGradient: 'linear-gradient(135deg, #ec008c, #fc6767)',
+    lyrics: [
+      { time: 0, text: "🌴 [Tom Petty - Love Is A Long Road Intro] 🌴" },
+      { time: 10, text: "Lucia, do you know why you're here?" },
+      { time: 14, text: "Bad luck, I guess." }
+    ],
+    comments: [
+      { id: 'c15', author: 'Gamer 99', avatar: 'G', text: '10 years of waiting, and it was completely worth it.', likes: '350K', time: '1 year ago' }
+    ]
+  },
+  {
+    id: 'TcMBFSGVi1c',
+    title: 'Marvel Studios Avengers: Endgame Official Trailer',
+    artist: 'Marvel Entertainment',
+    duration: '2:26',
+    category: 'trailers',
+    views: '160M views',
+    likes: '3.9M likes',
+    channel: 'Marvel Entertainment',
+    channelAvatar: 'M',
+    subscribers: '20M subscribers',
+    publishedAt: '5 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #b92b27, #1565c0)',
+    lyrics: [
+      { time: 0, text: "⚔️ [Solemn Avengers Brass Score] ⚔️" },
+      { time: 10, text: "Part of the journey is the end." }
+    ],
+    comments: [
+      { id: 'c16', author: 'MCU Fanatic', avatar: 'M', text: 'Whatever it takes. The greatest cinematic era ever.', likes: '140K', time: '4 years ago' }
+    ]
+  },
+
+  // --- PODCASTS & DISCUSSION ---
+  {
+    id: 'ycPr5-27vSI',
+    title: 'Joe Rogan Experience #1169 - Elon Musk',
+    artist: 'PowerfulJRE',
+    duration: '2:37:02',
+    category: 'podcasts',
+    views: '68M views',
+    likes: '2.1M likes',
+    channel: 'PowerfulJRE',
+    channelAvatar: 'J',
+    subscribers: '17M subscribers',
+    publishedAt: '5 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #3a6073, #3a7bd5)',
+    lyrics: [
+      { time: 0, text: "🎙️ [JRE Electric Guitar Opening Riff] 🎙️" },
+      { time: 5, text: "Joe: Welcome back, folks. Tonight we have Elon Musk." },
+      { time: 12, text: "Elon: Thanks for having me on." }
+    ],
+    comments: [
+      { id: 'c17', author: 'Deep Thinker', avatar: 'D', text: 'Historic interview that changed podcast culture forever.', likes: '95K', time: '4 years ago' }
+    ]
+  },
+  {
+    id: 'p3JLaF_4Tz8',
+    title: 'Understanding & Overcoming Dopamine & Habits | Huberman Lab',
+    artist: 'Dr. Andrew Huberman',
+    duration: '1:45:20',
+    category: 'podcasts',
+    views: '14M views',
+    likes: '620K likes',
+    channel: 'Andrew Huberman',
+    channelAvatar: 'H',
+    subscribers: '5.8M subscribers',
+    publishedAt: '2 years ago',
+    audioBgGradient: 'linear-gradient(135deg, #134e5e, #71b280)',
+    lyrics: [
+      { time: 0, text: "🧠 [Neuroscience Synth Ambiance] 🧠" },
+      { time: 5, text: "Welcome to the Huberman Lab Podcast, where we discuss science and science-based tools." }
+    ],
+    comments: [
+      { id: 'c18', author: 'Daily Learner', avatar: 'D', text: 'This episode genuinely changed how I approach my work routine.', likes: '45K', time: '1 year ago' }
+    ]
+  },
+
+  // --- 24/7 STREAM & AMBIENCE ---
+  {
+    id: 'jfKfPfyJRdk',
+    title: 'lofi hip hop radio 📚 - beats to relax/study to',
+    artist: 'Lofi Girl',
+    duration: 'LIVE',
+    category: 'music',
+    views: '85K watching',
+    likes: '7.8M likes',
+    channel: 'Lofi Girl',
+    channelAvatar: 'L',
+    subscribers: '14M subscribers',
+    publishedAt: 'Live Now',
+    isLive: true,
+    audioBgGradient: 'linear-gradient(135deg, #654ea3, #eaafc8)',
+    lyrics: [
+      { time: 0, text: "☕ [Cozy Warm Vinyl Crackle & Lofi Piano Beats] ☕" }
+    ],
+    comments: [
+      { id: 'c19', author: 'Student 2024', avatar: 'S', text: 'Passed my degree thanks to Lofi Girl studying with me every night.', likes: '180K', time: '6 months ago' }
     ]
   },
   {
     id: '3nbjhpcZ9_g',
     title: 'Usain Bolt 100m World Record Highlights - Berlin 2009',
-    artist: 'Olympics',
+    artist: 'World Athletics',
     duration: '3:15',
     category: 'sports',
-    views: '65M views',
-    likes: '2.4M likes',
-    channel: 'Olympics',
-    channelAvatar: 'O',
-    subscribers: '12M subscribers',
-    publishedAt: '15 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #f7b733, #fc4a1a)',
-    lyrics: [
-      { time: 0, text: "🏃‍♂️ [Track & Field Commentary, Ready Position] 🏃‍♂️" },
-      { time: 4, text: "On your marks... set..." },
-      { time: 9, text: "BOLT IS PULLING AWAY! 9.58 SECONDS! NEW WORLD RECORD!" }
-    ],
-    comments: [
-      { id: 'cs2', author: 'AthleticsGuy', avatar: 'A', text: 'I still get goosebumps watching this. He literally slowed down to celebrate and still got 9.58!', likes: '34K', time: '5 years ago' }
-    ]
-  },
-
-  // --- VLOGS ---
-  {
-    id: '2K8Sg-Lz9Zg',
-    title: 'I Survived 50 Hours In Antarctica | MrBeast',
-    artist: 'MrBeast',
-    duration: '12:00',
-    category: 'vlogs',
-    views: '140M views',
-    likes: '6.5M likes',
-    channel: 'MrBeast',
-    channelAvatar: 'B',
-    subscribers: '290M subscribers',
-    publishedAt: '2 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #00c6ff, #0072ff)',
-    lyrics: [
-      { time: 0, text: "❄️ [Wind Howling & High-Tempo Vlog Beat] ❄️" },
-      { time: 4, text: "We just landed in Antarctica and we have to survive here for 50 hours!" },
-      { time: 9, text: "It is minus 40 degrees and the wind is freezing our faces off." }
-    ],
-    comments: [
-      { id: 'cv1', author: 'VlogViewer', avatar: 'V', text: 'The editing and pacing of MrBeast videos are just on another level. Antarctica looks insane!', likes: '45K', time: '2 years ago' }
-    ]
-  },
-  {
-    id: '84WIaK374TU',
-    title: 'The $21,000 First Class Airplane Seat | Casey Neistat',
-    artist: 'Casey Neistat',
-    duration: '11:15',
-    category: 'vlogs',
-    views: '82M views',
-    likes: '2.1M likes',
-    channel: 'Casey Neistat',
-    channelAvatar: 'C',
-    subscribers: '12M subscribers',
+    views: '88M views',
+    likes: '1.4M likes',
+    channel: 'World Athletics',
+    channelAvatar: 'W',
+    subscribers: '1.2M subscribers',
     publishedAt: '8 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #1d2671, #c33764)',
+    audioBgGradient: 'linear-gradient(135deg, #f7971e, #ffd200)',
     lyrics: [
-      { time: 0, text: "✈️ [Dynamic Casey Neistat Synth Vlog Track] ✈️" },
-      { time: 4, text: "This is a private cabin. There's a sliding door..." },
-      { time: 9, text: "There is an actual shower on this airplane. Unbelievable!" }
+      { time: 0, text: "⚡ [Roar of the Berlin Stadium Crowd] ⚡" },
+      { time: 10, text: "On your marks... Set..." },
+      { time: 15, text: "9.58 seconds! The fastest human in history!" }
     ],
     comments: [
-      { id: 'cv2', author: 'TravelBug', avatar: 'T', text: 'The video that started the whole luxury airline review trend. Beautifully made!', likes: '29K', time: '5 years ago' }
-    ]
-  },
-
-  // --- TRAILERS ---
-  {
-    id: 'QdBZY2fkU-0',
-    title: 'Grand Theft Auto VI Trailer 1 (Official)',
-    artist: 'Rockstar Games',
-    duration: '1:30',
-    category: 'trailers',
-    views: '210M views',
-    likes: '11M likes',
-    channel: 'Rockstar',
-    channelAvatar: 'R',
-    subscribers: '16M subscribers',
-    publishedAt: '7 months ago',
-    audioBgGradient: 'linear-gradient(135deg, #fc4a1a, #f7b733)',
-    lyrics: [
-      { time: 0, text: "🎮 [Tom Petty - Love Is A Long Road Intro] 🎮" },
-      { time: 4, text: "Lucia, do you know why you are here? Bad luck, I guess..." },
-      { time: 10, text: "Trust? Trust." }
-    ],
-    comments: [
-      { id: 'ct1', author: 'GamerGuy', avatar: 'G', text: 'This trailer literally broke the internet. The graphics look absolutely mind-blowing!', likes: '120K', time: '6 months ago' }
-    ]
-  },
-  {
-    id: 'TcMBFSGVi1c',
-    title: 'Marvel Studios\' Avengers: Endgame - Official Trailer',
-    artist: 'Marvel Entertainment',
-    duration: '2:28',
-    category: 'trailers',
-    views: '160M views',
-    likes: '4.2M likes',
-    channel: 'Marvel',
-    channelAvatar: 'M',
-    subscribers: '58M subscribers',
-    publishedAt: '5 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #141e30, #243b55)',
-    lyrics: [
-      { time: 0, text: "🦸‍♂️ [Ominous Cinematic Avengers Orchestra] 🦸‍♂️" },
-      { time: 5, text: "Seems like a thousand years ago, I fought my way out of that cave..." },
-      { time: 12, text: "Whatever it takes. Whatever it takes." }
-    ],
-    comments: [
-      { id: 'ct2', author: 'MCUStan', avatar: 'M', text: '"Whatever it takes" still gives me chills. This era of Marvel was historic.', likes: '54K', time: '4 years ago' }
-    ]
-  },
-
-  // --- REVIEWS ---
-  {
-    id: 'TX9qSa_ZgI0',
-    title: 'Apple Vision Pro Review: Tomorrow\'s Tech, Today',
-    artist: 'Marques Brownlee',
-    duration: '29:45',
-    category: 'reviews',
-    views: '12M views',
-    likes: '580K likes',
-    channel: 'MKBHD',
-    channelAvatar: 'M',
-    subscribers: '19M subscribers',
-    publishedAt: '5 months ago',
-    audioBgGradient: 'linear-gradient(135deg, #1f4037, #99f2c8)',
-    lyrics: [
-      { time: 0, text: "👓 [Slick MKBHD Tech Beat Intro] 👓" },
-      { time: 5, text: "So, I have been wearing this headset on my head for the last week..." },
-      { time: 11, text: "The eye tracking is magic, but it is heavy and costs $3,500." }
-    ],
-    comments: [
-      { id: 'cr1', author: 'Techie', avatar: 'T', text: 'Hands down the most honest and beautifully produced Vision Pro review on YouTube.', likes: '18K', time: '4 months ago' }
-    ]
-  },
-  {
-    id: 'X3kvU76vC78',
-    title: 'iPhone 15 Pro Review: 1 Month Later',
-    artist: 'Marques Brownlee',
-    duration: '15:20',
-    category: 'reviews',
-    views: '8.5M views',
-    likes: '340K likes',
-    channel: 'MKBHD',
-    channelAvatar: 'M',
-    subscribers: '19M subscribers',
-    publishedAt: '9 months ago',
-    audioBgGradient: 'linear-gradient(135deg, #333333, #dd1818)',
-    lyrics: [
-      { time: 0, text: "📱 [Upbeat Tech Synth Vibe] 📱" },
-      { time: 4, text: "This is the titanium iPhone. Does the lighter weight actually matter?" },
-      { time: 9, text: "Let's talk about the action button and battery life after a month of usage." }
-    ],
-    comments: [
-      { id: 'cr2', author: 'AppleUser', avatar: 'A', text: 'Marques is so consistent. The production quality remains unmatched.', likes: '9.2K', time: '8 months ago' }
-    ]
-  },
-
-  // --- PODCASTS & LIVE ---
-  {
-    id: 'ycPr5-27vSI',
-    title: 'Joe Rogan Experience #1169 - Elon Musk',
-    artist: 'Joe Rogan',
-    duration: '2:37:00',
-    category: 'podcast',
-    views: '68M views',
-    likes: '3.1M likes',
-    channel: 'JRE Clips',
-    channelAvatar: 'J',
-    subscribers: '6.4M subscribers',
-    publishedAt: '5 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #f857a6, #ff5858)',
-    lyrics: [
-      { time: 0, text: "🎙️ [Classic Joe Rogan Mic Check & Intro] 🎙️" },
-      { time: 5, text: "Welcome to the podcast. Today my guest is Elon Musk..." },
-      { time: 10, text: "So, let's talk about the future, AI, and flame throwers." }
-    ],
-    comments: [
-      { id: 'cp1', author: 'PodcastListener', avatar: 'P', text: 'This is probably the most famous podcast episode in internet history.', likes: '89K', time: '4 years ago' }
-    ]
-  },
-  {
-    id: 'h2aWYj61L98',
-    title: 'Master Your Sleep & Be More Alert | Huberman Lab',
-    artist: 'Andrew Huberman',
-    duration: '2:01:14',
-    category: 'podcast',
-    views: '6.2M views',
-    likes: '220K likes',
-    channel: 'Andrew Huberman',
-    channelAvatar: 'H',
-    subscribers: '5.2M subscribers',
-    publishedAt: '3 years ago',
-    audioBgGradient: 'linear-gradient(135deg, #4da0b0, #d39d38)',
-    lyrics: [
-      { time: 0, text: "🧠 [Calm Academic Huberman Science Intro] 🧠" },
-      { time: 5, text: "Welcome to the Huberman Lab Podcast. Today we are talking about sleep..." },
-      { time: 11, text: "How viewing morning sunlight anchors your circadian rhythm." }
-    ],
-    comments: [
-      { id: 'cp2', author: 'HealthyLife', avatar: 'H', text: 'The morning sunlight tip completely cured my insomnia. Andrew is a national treasure.', likes: '14K', time: '2 years ago' }
-    ]
-  },
-  {
-    id: 'jfKfPfyJRdk',
-    title: 'lofi hip hop radio 📚 - beats to relax/study to',
-    artist: 'Lofi Girl',
-    duration: '24:00',
-    category: 'live',
-    views: '34K watching',
-    likes: '420K likes',
-    channel: 'Lofi Girl',
-    channelAvatar: 'L',
-    subscribers: '14M subscribers',
-    publishedAt: 'LIVE STREAM',
-    audioBgGradient: 'linear-gradient(135deg, #654ea3, #eaafc8)',
-    isLive: true,
-    lyrics: [
-      { time: 0, text: "☕ Pure relax study instrumental vibes ☕" }
-    ],
-    comments: [
-      { id: 'c11', author: 'Codemonkey', avatar: 'C', text: 'Here studying for my computer science finals. Good luck everyone!', likes: '4.5K', time: '1 hour ago' }
+      { id: 'c20', author: 'Sprint King', avatar: 'S', text: 'A world record that will probably stand for 100 years.', likes: '75K', time: '2 years ago' }
     ]
   }
 ];
 
 export const PLAYLISTS: Playlist[] = [
   {
-    id: 'p1',
-    name: 'Curated Pop Hits 🔥',
-    icon: '🎉',
-    trackIds: ['JGwWNGJdvx8', '4NRXx6U8ABQ', 'kTJczUoc26U']
+    id: 'pl-trending',
+    name: 'Global Trending Today',
+    description: 'Top videos and music tracks blowing up across the internet.',
+    coverUrl: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=400&q=80',
+    tracks: CURATED_TRACKS.slice(0, 6)
   },
   {
-    id: 'p2',
-    name: 'Acoustic & Soul 🍃',
-    icon: '❤️',
-    trackIds: ['H5v3kku4y6Q', 'G7KNmW9a75Y', 'U3ASj1L6_sY']
+    id: 'pl-study-focus',
+    name: 'Deep Focus & Study Beats',
+    description: 'Lofi and ambient audio tailored for productivity and deep work.',
+    coverUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=400&q=80',
+    tracks: [CURATED_TRACKS[18], CURATED_TRACKS[5], CURATED_TRACKS[1], CURATED_TRACKS[12]]
   },
   {
-    id: 'p3',
-    name: 'Late Night Focus & Pods 🌙',
-    icon: '💻',
-    trackIds: ['jfKfPfyJRdk', 'U3ASj1L6_sY', 'ycPr5-27vSI', 'h2aWYj61L98']
+    id: 'pl-workout',
+    name: 'High Energy & Motivation',
+    description: 'Electrifying beats and adrenaline tracks to power your day.',
+    coverUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80',
+    tracks: [CURATED_TRACKS[2], CURATED_TRACKS[7], CURATED_TRACKS[4], CURATED_TRACKS[19]]
   }
 ];
