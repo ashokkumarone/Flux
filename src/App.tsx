@@ -656,7 +656,7 @@ export default function App() {
                 {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
-              {/* Combined Title: Flux / Flux Music with ⚡ Logo */}
+              {/* Combined Title: Flux / Flux Music */}
               <div
                 onClick={() => {
                   setSelectedPlaylistId(null);
@@ -664,13 +664,10 @@ export default function App() {
                   setActiveTab('home');
                   setIsWatchPageOpen(false); // return to browse feed!
                 }}
-                className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
+                className="flex items-center cursor-pointer group select-none shrink-0"
               >
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/20 text-white font-black text-xs sm:text-sm group-hover:scale-105 transition-transform">
-                  ⚡
-                </div>
-                <h1 className="text-sm sm:text-base font-black tracking-tight flex items-center leading-none shrink-0">
-                  <span className="bg-gradient-to-r from-theme-text via-indigo-300 to-purple-300 bg-clip-text text-transparent font-black tracking-wider text-base sm:text-lg">
+                <h1 className="text-base sm:text-lg font-black tracking-tight flex items-center leading-none shrink-0">
+                  <span className="bg-gradient-to-r from-theme-text via-indigo-300 to-purple-300 bg-clip-text text-transparent font-black tracking-wider text-lg sm:text-xl">
                     {appMode === 'video' ? 'Flux' : 'Flux Music'}
                   </span>
                 </h1>
