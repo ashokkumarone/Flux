@@ -153,7 +153,7 @@ export default function AudioPlayerUI({
   return (
     <div className="audio-layout w-full max-w-md mx-auto flex flex-col items-center justify-center select-none">
       {/* Real HTML5 Native Audio Engine for pure ad-free playback */}
-      <audio
+      <audio onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}
         ref={audioRef}
         src={track.audioUrl}
         onTimeUpdate={() => {
