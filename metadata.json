@@ -1,6 +1,6 @@
 {
-  "name": "Remix:Isaipadam",
-  "description": "A unified platform combining the best of YouTube and YouTube Music with seamless switching between Video and Audio modes.",
+  "name": "Flux",
+  "description": "A unified platform combining the best of YouTube and music streaming with seamless switching between Video and Audio modes without losing playback position.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
