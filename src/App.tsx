@@ -69,31 +69,6 @@ export default function App() {
     const rem = Math.floor(secs % 60);
     return `${mins}:${rem < 10 ? '0' : ''}${rem}`;
   };
-
-  // Tick playback timer
-  useEffect(() => {
-    let interval: any = null;
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setPlaybackTime((prev) => {
-          const total = parseTrackDuration(activeTrack?.duration || '3:00');
-          if (prev >= total) {
-            handleNextTrack();
-            return 0;
-          }
-          return prev + 1;
-        });
-      }, 1000);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isPlaying, activeTrack?.id, activeTrack?.duration]);
-
-  // Reset timer on track switch
-  useEffect(() => {
-    setPlaybackTime(0);
-  }, [selectedTrackId]);
   
   const searchInputRef = React.useRef<HTMLInputElement>(null);
   const expandedSearchInputRef = React.useRef<HTMLInputElement>(null);
@@ -567,6 +542,31 @@ export default function App() {
     }
     setIsPlaying(true);
   };
+
+  // Safe timer ticks (after activeTrack & handleNextTrack are fully initialized)
+  useEffect(() => {
+    let interval: any = null;
+    if (isPlaying) {
+      interval = setInterval(() => {
+        setPlaybackTime((prev) => {
+          const total = parseTrackDuration(activeTrack ? activeTrack.duration : '3:00');
+          if (prev >= total) {
+            handleNextTrack();
+            return 0;
+          }
+          return prev + 1;
+        });
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isPlaying, activeTrack?.id, activeTrack?.duration]);
+
+  // Reset timer on track switch
+  useEffect(() => {
+    setPlaybackTime(0);
+  }, [selectedTrackId]);
 
   return (
     <div className="min-h-screen bg-theme-bg text-theme-text flex flex-col font-sans overflow-x-hidden antialiased transition-colors duration-300">
