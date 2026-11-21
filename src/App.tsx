@@ -54,6 +54,46 @@ export default function App() {
   const [selectedTag, setSelectedTag] = useState<string>('All');
   const [isWatchPageOpen, setIsWatchPageOpen] = useState<boolean>(false); // Start on home feed instead of directly on player!
   const [isAudioOnlyWatch, setIsAudioOnlyWatch] = useState<boolean>(false);
+  const [playbackTime, setPlaybackTime] = useState<number>(0);
+
+  const parseTrackDuration = (d: string): number => {
+    if (!d || d === 'LIVE' || d.includes('STREAM')) return 300;
+    const parts = d.split(':').map(Number);
+    if (parts.length === 2) return parts[0] * 60 + parts[1];
+    if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+    return 180;
+  };
+
+  const formatSeconds = (secs: number): string => {
+    const mins = Math.floor(secs / 60);
+    const rem = Math.floor(secs % 60);
+    return `${mins}:${rem < 10 ? '0' : ''}${rem}`;
+  };
+
+  // Tick playback timer
+  useEffect(() => {
+    let interval: any = null;
+    if (isPlaying) {
+      interval = setInterval(() => {
+        setPlaybackTime((prev) => {
+          const total = parseTrackDuration(activeTrack?.duration || '3:00');
+          if (prev >= total) {
+            handleNextTrack();
+            return 0;
+          }
+          return prev + 1;
+        });
+      }, 1000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isPlaying, activeTrack?.id, activeTrack?.duration]);
+
+  // Reset timer on track switch
+  useEffect(() => {
+    setPlaybackTime(0);
+  }, [selectedTrackId]);
   
   const searchInputRef = React.useRef<HTMLInputElement>(null);
   const expandedSearchInputRef = React.useRef<HTMLInputElement>(null);
@@ -616,7 +656,7 @@ export default function App() {
                 {isSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
-              {/* Combined Title: Isaipadam / Isaipadam Music */}
+              {/* Combined Title: Flux / Flux Music with ⚡ Logo */}
               <div
                 onClick={() => {
                   setSelectedPlaylistId(null);
@@ -624,10 +664,15 @@ export default function App() {
                   setActiveTab('home');
                   setIsWatchPageOpen(false); // return to browse feed!
                 }}
-                className="flex items-center cursor-pointer group select-none shrink-0"
+                className="flex items-center gap-2 cursor-pointer group select-none shrink-0"
               >
-                <h1 className="text-sm sm:text-base font-black tracking-tight text-theme-text flex items-center leading-none shrink-0">
-                  <span>{appMode === 'video' ? 'Isaipadam' : 'Isaipadam Music'}</span>
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/20 text-white font-black text-xs sm:text-sm group-hover:scale-105 transition-transform">
+                  ⚡
+                </div>
+                <h1 className="text-sm sm:text-base font-black tracking-tight flex items-center leading-none shrink-0">
+                  <span className="bg-gradient-to-r from-theme-text via-indigo-300 to-purple-300 bg-clip-text text-transparent font-black tracking-wider text-base sm:text-lg">
+                    {appMode === 'video' ? 'Flux' : 'Flux Music'}
+                  </span>
                 </h1>
               </div>
             </div>
@@ -647,7 +692,7 @@ export default function App() {
                 <Search className="w-4 h-4 text-theme-text-muted shrink-0" />
                 <input
                   type="text"
-                  placeholder="Search Isaipadam"
+                  placeholder="Search Flux (songs, videos, podcasts)..."
                   value={searchQuery}
                   readOnly
                   className="bg-transparent border-none text-[12px] text-theme-text placeholder-gray-500 focus:outline-none w-full py-0 cursor-pointer"
@@ -711,22 +756,20 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Modern Custom Premium Mode Toggle Switch */}
+              {/* Modern Mode Toggle Pill - Clean Icons Only */}
               <button
                 onClick={() => {
                   const targetMode = appMode === 'video' ? 'audio' : 'video';
                   setAppMode(targetMode);
                   setIsWatchPageOpen(false);
                 }}
-                className="relative flex items-center bg-theme-input border border-theme-input-border h-9 rounded-full p-1 w-18 sm:w-28 cursor-pointer group select-none shrink-0 transition duration-300 hover:border-theme-highlight/40"
-                title={`Switch to ${appMode === 'video' ? 'Audio Mode' : 'Video Mode'}`}
+                className="relative flex items-center bg-theme-input border border-theme-input-border h-9 rounded-full p-1 w-18 cursor-pointer group select-none shrink-0 transition duration-300 hover:border-indigo-500/40"
+                title={`Switch to ${appMode === 'video' ? 'Audio Mode 🎧' : 'Video Mode 📺'}`}
               >
                 {/* Active Slider Background */}
                 <div
-                  className={`absolute top-1 bottom-1 rounded-full transition-all duration-300 ease-out ${
-                    appMode === 'video' 
-                      ? 'left-1 w-[28px] sm:w-[50px]' 
-                      : 'left-[34px] sm:left-[56px] w-[28px] sm:w-[50px]'
+                  className={`absolute top-1 bottom-1 w-[30px] rounded-full transition-all duration-300 ease-out ${
+                    appMode === 'video' ? 'left-1' : 'left-[35px]'
                   }`}
                   style={{ 
                     backgroundColor: 'var(--highlight-color)',
@@ -734,16 +777,14 @@ export default function App() {
                   }}
                 />
                 
-                {/* Icons & Text */}
-                <div className="absolute inset-0 flex items-center justify-between px-2 sm:px-3 text-[10px] font-black uppercase tracking-wider text-theme-text-muted">
-                  <div className={`flex items-center gap-1 transition duration-300 z-10 ${appMode === 'video' ? 'text-black font-black' : 'text-theme-text-muted group-hover:text-theme-text'}`}>
-                    <span>📺</span>
-                    <span className="hidden sm:inline text-[9px]">Video</span>
-                  </div>
-                  <div className={`flex items-center gap-1 transition duration-300 z-10 ${appMode === 'audio' ? 'text-black font-black' : 'text-theme-text-muted group-hover:text-theme-text'}`}>
-                    <span>🎵</span>
-                    <span className="hidden sm:inline text-[9px]">Audio</span>
-                  </div>
+                {/* Clean Icons Only - No cramped text */}
+                <div className="absolute inset-0 flex items-center justify-between px-2.5 text-sm pointer-events-none z-10">
+                  <span className={`transition duration-300 ${appMode === 'video' ? 'scale-110 drop-shadow' : 'opacity-40'}`}>
+                    📺
+                  </span>
+                  <span className={`transition duration-300 ${appMode === 'audio' ? 'scale-110 drop-shadow' : 'opacity-40'}`}>
+                    🎧
+                  </span>
                 </div>
               </button>
             </div>
@@ -857,7 +898,7 @@ export default function App() {
                 <div>
                   <h2 className="text-xl font-black tracking-tight text-theme-text flex items-center gap-2.5">
                     <Settings className="w-5 h-5 text-indigo-400" />
-                    <span>Isaipadam Settings</span>
+                    <span>Flux Settings</span>
                   </h2>
                   <p className="text-xs text-theme-text-muted mt-1">Configure your video, audio, and account preferences</p>
                 </div>
@@ -1655,16 +1696,17 @@ export default function App() {
                               </span>
                             </button>
                             
-                            {/* Audio Only toggle button */}
+                            {/* Dedicated Audio Mode Switch Button */}
                             <button
-                              onClick={() => setIsAudioOnlyWatch(!isAudioOnlyWatch)}
-                              className={`flex items-center gap-1 text-[11px] font-bold border px-4 py-2 rounded-full transition duration-300 cursor-pointer shrink-0 ${
-                                isAudioOnlyWatch
-                                  ? 'bg-indigo-600 hover:bg-indigo-500 text-white border-indigo-500'
-                                  : 'text-theme-text bg-theme-sidebar hover:bg-theme-sidebar-hover border-theme-border'
-                              }`}
+                              onClick={() => {
+                                setAppMode('audio');
+                                setIsWatchPageOpen(true);
+                              }}
+                              className="flex items-center gap-1.5 text-[11px] font-extrabold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 border border-indigo-400/40 px-4 py-2 rounded-full transition duration-300 shadow-md hover:shadow-indigo-500/25 active:scale-95 cursor-pointer shrink-0"
+                              title="Switch to Audio Player for this exact track"
                             >
-                              <span>{isAudioOnlyWatch ? 'Video' : 'Audio'}</span>
+                              <span>🎧</span>
+                              <span>Audio Mode</span>
                             </button>
                           </div>
                         </div>
@@ -2527,18 +2569,30 @@ export default function App() {
             }}
             className="fixed bottom-0 inset-x-0 bg-theme-card/95 backdrop-blur-md border-t border-theme-border p-3.5 px-6 z-40 flex items-center justify-between gap-4 shadow-2xl cursor-pointer hover:bg-theme-sidebar-hover transition-colors"
           >
-            {/* Visual Progress ticker line at very top of bar */}
-            <div className="absolute top-0 left-0 right-0 h-[2.5px] bg-theme-border">
+            {/* Interactive Progress Scrub Bar with Seconds Seeking */}
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                const rect = e.currentTarget.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percent = Math.max(0, Math.min(1, clickX / rect.width));
+                const total = parseTrackDuration(activeTrack.duration);
+                setPlaybackTime(Math.floor(percent * total));
+              }}
+              className="absolute top-0 left-0 right-0 h-2 bg-theme-border/60 hover:h-3 transition-all cursor-pointer group z-20"
+              title="Click anywhere to seek seconds"
+            >
               <div
-                className="h-full bg-gradient-to-r from-purple-500 to-indigo-400 transition-all duration-1000"
-                style={{ width: '42%' }} // simple aesthetic mock progress
-              ></div>
+                className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 relative transition-all"
+                style={{ width: `${Math.min(100, (playbackTime / Math.max(1, parseTrackDuration(activeTrack.duration))) * 100)}%` }}
+              >
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white shadow-lg border-2 border-indigo-500 scale-0 group-hover:scale-100 transition-transform"></div>
+              </div>
             </div>
 
+            {/* Left: Track Info & Thumbnail */}
             <div className="flex items-center gap-3 min-w-0 flex-1 sm:flex-none sm:max-w-xs">
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden border border-theme-border"
-              >
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 relative overflow-hidden border border-theme-border shadow-sm">
                 <img
                   src={`https://img.youtube.com/vi/${activeTrack.id}/mqdefault.jpg`}
                   alt={activeTrack.title}
@@ -2548,61 +2602,60 @@ export default function App() {
               </div>
               <div className="min-w-0">
                 <h4 className="text-xs font-bold text-theme-text truncate">{activeTrack.title}</h4>
-                <p className="text-[10px] text-theme-text-muted font-semibold mt-0.5 truncate">{activeTrack.artist}</p>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <p className="text-[10px] text-theme-text-muted font-semibold truncate">{activeTrack.artist}</p>
+                  <span className="text-[10px] font-mono font-bold text-indigo-400 bg-theme-sidebar border border-theme-border px-1.5 py-0.2 rounded hidden sm:inline-block">
+                    {formatSeconds(playbackTime)} / {activeTrack.duration}
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Middle Quick Engine Toggles (Only show if video mode to switch to audio, hide once in audio) */}
-            {appMode === 'video' && (
-              <div className="hidden sm:flex items-center gap-4 bg-theme-active-bg px-3.5 py-1.5 rounded-full border border-theme-border">
-                <div className="flex items-center gap-1.5 text-[9px] font-extrabold text-theme-text-muted uppercase tracking-wider">
-                  <span>Active engine:</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <button
-                    onClick={() => setAppMode('video')}
-                    className={`text-[9px] font-bold px-3 py-1 rounded-full transition cursor-pointer ${
-                      appMode === 'video'
-                        ? 'bg-indigo-600 text-white font-extrabold'
-                        : 'text-theme-text-muted hover:text-theme-text'
-                    }`}
-                  >
-                    Video
-                  </button>
-                  <button
-                    onClick={() => {
-                      setAppMode('audio');
-                      setIsWatchPageOpen(true);
-                    }}
-                    className={`text-[9px] font-bold px-3 py-1 rounded-full transition cursor-pointer ${
-                      appMode === 'audio'
-                        ? 'bg-indigo-600 text-white font-extrabold'
-                        : 'text-theme-text-muted hover:text-theme-text'
-                    }`}
-                  >
-                    Audio
-                  </button>
-                </div>
-              </div>
-            )}
+            {/* Middle: Prominent Audio / Video Mode Switch Pill */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const target = appMode === 'video' ? 'audio' : 'video';
+                  setAppMode(target);
+                  setIsWatchPageOpen(true);
+                }}
+                className={`flex items-center gap-1.5 px-3 sm:px-4 py-1.5 rounded-full text-xs font-extrabold transition-all shadow-md active:scale-95 cursor-pointer border ${
+                  appMode === 'video'
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white border-indigo-400/30'
+                    : 'bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-500 hover:to-pink-500 text-white border-red-400/30'
+                }`}
+                title={appMode === 'video' ? 'Switch to Audio Player for this song' : 'Switch to Video Watch view'}
+              >
+                <span>{appMode === 'video' ? '🎧' : '📺'}</span>
+                <span>{appMode === 'video' ? 'Audio' : 'Video'}</span>
+              </button>
 
-            {/* Quick Player Control Buttons */}
-            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-mono font-bold text-indigo-400 bg-theme-sidebar border border-theme-border px-2 py-1 rounded-md sm:hidden">
+                {formatSeconds(playbackTime)}
+              </span>
+            </div>
+
+            {/* Right: Player Control Buttons */}
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={handlePrevTrack}
                 className="hidden sm:flex text-theme-text-muted hover:text-theme-text p-2 rounded-full hover:bg-theme-sidebar-hover cursor-pointer"
+                title="Previous"
               >
                 ⏮
               </button>
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="w-9 h-9 rounded-full bg-indigo-600 text-white hover:scale-105 active:scale-95 flex items-center justify-center transition duration-200 shadow-md cursor-pointer shrink-0"
+                className="w-9 h-9 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white hover:scale-105 active:scale-95 flex items-center justify-center transition duration-200 shadow-md cursor-pointer shrink-0"
+                title={isPlaying ? 'Pause' : 'Play'}
               >
                 {isPlaying ? <Pause className="w-4 h-4 fill-white text-white" /> : <Play className="w-4 h-4 fill-white text-white translate-x-0.5" />}
               </button>
               <button
                 onClick={handleNextTrack}
                 className="text-theme-text-muted hover:text-theme-text p-2 rounded-full hover:bg-theme-sidebar-hover cursor-pointer"
+                title="Next"
               >
                 ⏭
               </button>
@@ -2645,7 +2698,7 @@ export default function App() {
                 <div className="text-center space-y-2 mt-2">
                   <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full text-xs font-black text-amber-400 uppercase tracking-widest animate-pulse">
                     <span>👑</span>
-                    <span>Isaipadam VIP Pass</span>
+                    <span>Flux VIP Pass</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-100 tracking-tight">
                     Upgrade to Premium
@@ -2757,7 +2810,7 @@ export default function App() {
                         setIsPremium(true);
                         // Show success message or auto close
                         setCouponMessage({
-                          text: '👑 Subscription Activated Successfully! Welcome to Isaipadam Premium!',
+                          text: '👑 Subscription Activated Successfully! Welcome to Flux Premium!',
                           isError: false,
                         });
                       }}
