@@ -1949,8 +1949,8 @@ export default function App() {
                       onSave={() => toggleSave(activeTrack.id)}
                       isSaved={playlistTrackIds.includes(activeTrack.id)}
                     />
-                    {/* Keep standard Youtube embed stream running in the background */}
-                    <div className="hidden">
+                    {/* Keep standard Youtube embed stream running in the background - 1px fixed so browser never mutes it */}
+                    <div className="fixed bottom-1 right-1 w-1 h-1 opacity-5 pointer-events-none z-[-1] overflow-hidden">
                       <YoutubePlayer
                         videoId={selectedTrackId}
                         appMode="audio"
