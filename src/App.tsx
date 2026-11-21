@@ -756,37 +756,42 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Modern Mode Toggle Pill - Clean Icons Only */}
-              <button
-                onClick={() => {
-                  const targetMode = appMode === 'video' ? 'audio' : 'video';
-                  setAppMode(targetMode);
-                  setIsWatchPageOpen(false);
-                }}
-                className="relative flex items-center bg-theme-input border border-theme-input-border h-9 rounded-full p-1 w-18 cursor-pointer group select-none shrink-0 transition duration-300 hover:border-indigo-500/40"
-                title={`Switch to ${appMode === 'video' ? 'Audio Mode 🎧' : 'Video Mode 📺'}`}
-              >
-                {/* Active Slider Background */}
-                <div
-                  className={`absolute top-1 bottom-1 w-[30px] rounded-full transition-all duration-300 ease-out ${
-                    appMode === 'video' ? 'left-1' : 'left-[35px]'
-                  }`}
-                  style={{ 
-                    backgroundColor: 'var(--highlight-color)',
-                    boxShadow: '0 2px 10px var(--highlight-border-alpha)'
+              {/* Segmented Mode Switcher Pill */}
+              <div className="flex items-center bg-theme-input border border-theme-input-border h-9 rounded-full p-1 gap-1 select-none shrink-0 shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAppMode('video');
+                    setIsWatchPageOpen(true);
                   }}
-                />
-                
-                {/* Clean Icons Only - No cramped text */}
-                <div className="absolute inset-0 flex items-center justify-between px-2.5 text-sm pointer-events-none z-10">
-                  <span className={`transition duration-300 ${appMode === 'video' ? 'scale-110 drop-shadow' : 'opacity-40'}`}>
-                    📺
-                  </span>
-                  <span className={`transition duration-300 ${appMode === 'audio' ? 'scale-110 drop-shadow' : 'opacity-40'}`}>
-                    🎧
-                  </span>
-                </div>
-              </button>
+                  className={`flex items-center gap-1.5 px-3 h-full rounded-full text-xs font-black transition-all cursor-pointer ${
+                    appMode === 'video'
+                      ? 'bg-gradient-to-r from-red-600 to-pink-600 text-white shadow-sm'
+                      : 'text-theme-text-muted hover:text-theme-text opacity-70 hover:opacity-100'
+                  }`}
+                  title="Watch Video (📺)"
+                >
+                  <span className="text-sm">📺</span>
+                  <span className="hidden sm:inline text-[10px] uppercase tracking-wider font-extrabold">Video</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setAppMode('audio');
+                    setIsWatchPageOpen(true);
+                  }}
+                  className={`flex items-center gap-1.5 px-3 h-full rounded-full text-xs font-black transition-all cursor-pointer ${
+                    appMode === 'audio'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-sm'
+                      : 'text-theme-text-muted hover:text-theme-text opacity-70 hover:opacity-100'
+                  }`}
+                  title="Listen Audio (🎧)"
+                >
+                  <span className="text-sm">🎧</span>
+                  <span className="hidden sm:inline text-[10px] uppercase tracking-wider font-extrabold">Audio</span>
+                </button>
+              </div>
             </div>
           </>
         )}
@@ -1624,6 +1629,7 @@ export default function App() {
                           videoId={selectedTrackId}
                           appMode={appMode}
                           title={activeTrack.title}
+                          isPlaying={isPlaying}
                         />
                       )}
 
@@ -1634,6 +1640,7 @@ export default function App() {
                             videoId={selectedTrackId}
                             appMode="audio"
                             title={activeTrack.title}
+                            isPlaying={isPlaying}
                           />
                         </div>
                       )}
@@ -1949,14 +1956,17 @@ export default function App() {
                       onSave={() => toggleSave(activeTrack.id)}
                       isSaved={playlistTrackIds.includes(activeTrack.id)}
                     />
-                    {/* Keep standard Youtube embed stream running in the background - 1px fixed so browser never mutes it */}
-                    <div className="fixed bottom-1 right-1 w-1 h-1 opacity-5 pointer-events-none z-[-1] overflow-hidden">
-                      <YoutubePlayer
-                        videoId={selectedTrackId}
-                        appMode="audio"
-                        title={activeTrack.title}
-                      />
-                    </div>
+                    {/* Only run background YouTube player if track does NOT have native audioUrl (prevents audio bleed) */}
+                    {!activeTrack.audioUrl && (
+                      <div className="fixed bottom-1 right-1 w-1 h-1 opacity-5 pointer-events-none z-[-1] overflow-hidden">
+                        <YoutubePlayer
+                          videoId={selectedTrackId}
+                          appMode="audio"
+                          title={activeTrack.title}
+                          isPlaying={isPlaying}
+                        />
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
