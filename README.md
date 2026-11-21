@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Flux
+# Flux
 
 ### Watch when you can. Listen when you move.
 
@@ -50,7 +50,7 @@ Modern digital entertainment forces users into a false dichotomy: **either** wat
 
 ```mermaid
 flowchart LR
-    A["📺 Video Feed / Watch Screen"] -->|"Tap 🎧 Audio Mode"| B["⚡ Stream Mode Switch"]
+    A["📺 Video Feed / Watch Screen"] -->|"Tap 🎧 Audio Mode"| B["Stream Mode Switch"]
     B --> C["🎵 Vinyl & Synced Lyrics UI"]
     C -->|"Click Scrubber Bar"| D["⏱️ Instant Timestamp Seek"]
     C -->|"Tap 📺 Video Mode"| E["📺 Resumes Video at Same Second"]
