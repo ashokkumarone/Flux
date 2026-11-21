@@ -473,7 +473,7 @@ export const CURATED_TRACKS: Track[] = [
     publishedAt: '8 years ago',
     audioBgGradient: 'linear-gradient(135deg, #f7971e, #ffd200)',
     lyrics: [
-      { time: 0, text: "⚡ [Roar of the Berlin Stadium Crowd] ⚡" },
+      { time: 0, text: "🏃 [Roar of the Berlin Stadium Crowd] 🏃" },
       { time: 10, text: "On your marks... Set..." },
       { time: 15, text: "9.58 seconds! The fastest human in history!" }
     ],
