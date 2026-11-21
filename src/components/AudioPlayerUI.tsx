@@ -46,6 +46,30 @@ export default function AudioPlayerUI({
   const [currentTime, setCurrentTime] = useState(0);
   const [isLyricsExpanded, setIsLyricsExpanded] = useState(false);
   const [showQueue, setShowQueue] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Real Audio Engine: Play/Pause/Seek
+  useEffect(() => {
+    if (audioRef.current) {
+      if (track.audioUrl) {
+        audioRef.current.src = track.audioUrl;
+        audioRef.current.currentTime = 0;
+      }
+      if (isPlaying) {
+        audioRef.current.play().catch(() => {});
+      }
+    }
+  }, [track.id, track.audioUrl]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play().catch(() => {});
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
 
   // Convert track duration string e.g., "4:21" to seconds
   const parseDurationToSeconds = (durationStr: string): number => {
@@ -119,11 +143,27 @@ export default function AudioPlayerUI({
     const clickX = e.clientX - rect.left;
     const width = rect.width;
     const clickedPercentage = clickX / width;
-    setCurrentTime(Math.floor(clickedPercentage * totalSeconds));
+    const newSecs = Math.floor(clickedPercentage * totalSeconds);
+    setCurrentTime(newSecs);
+    if (audioRef.current && track.audioUrl) {
+      audioRef.current.currentTime = newSecs;
+    }
   };
 
   return (
     <div className="audio-layout w-full max-w-md mx-auto flex flex-col items-center justify-center select-none">
+      {/* Real HTML5 Native Audio Engine for pure ad-free playback */}
+      <audio
+        ref={audioRef}
+        src={track.audioUrl}
+        onTimeUpdate={() => {
+          if (audioRef.current && audioRef.current.currentTime > 0) {
+            setCurrentTime(Math.floor(audioRef.current.currentTime));
+          }
+        }}
+        onEnded={() => onNext()}
+        preload="auto"
+      />
       {/* Centered Main Player Card */}
       <div className="w-full flex flex-col items-center p-4 sm:p-5 md:p-6 rounded-3xl bg-theme-card border border-theme-border shadow-2xl relative overflow-hidden transition-colors duration-300">
         <div className="absolute inset-0 bg-radial from-indigo-500/5 to-transparent pointer-events-none"></div>
