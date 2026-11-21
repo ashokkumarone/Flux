@@ -4,6 +4,7 @@ export const CURATED_TRACKS: Track[] = [
   // --- MUSIC ---
   {
     id: 'JGwWNGJdvx8',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/c7/4f/44c74f0d-72dc-6143-d4d0-ba14d661ca0d/mzaf_9566898362556366703.plus.aac.p.m4a',
     title: 'Shape of You (Official Music Video)',
     artist: 'Ed Sheeran',
     duration: '4:24',
@@ -31,6 +32,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: '4NRXx6U8ABQ',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/19/d6/60/19d660ff-e3a9-8377-15a3-ce4b28e89cac/mzaf_18422426156481158187.plus.aac.p.m4a',
     title: 'Blinding Lights (Official Music Video)',
     artist: 'The Weeknd',
     duration: '3:22',
@@ -57,6 +59,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'kTJczUoc26U',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d7/4a/84/d74a84d5-9afa-761e-b632-baab55c2a23b/mzaf_11865500880477235553.plus.aac.p.m4a',
     title: 'STAY (Official Music Video)',
     artist: 'The Kid LAROI & Justin Bieber',
     duration: '2:38',
@@ -81,6 +84,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'H5v3kku4y6Q',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/67/10/16/67101606-3869-ca44-6c03-e13d6322cb51/mzaf_1135399237022217274.plus.aac.p.m4a',
     title: 'As It Was (Official Music Video)',
     artist: 'Harry Styles',
     duration: '2:47',
@@ -106,6 +110,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'G7KNmW9a75Y',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/68/9e/f7/689ef7fe-14fe-a846-c87f-7d3b2d6344b1/mzaf_4167137058064023087.plus.aac.p.m4a',
     title: 'Flowers (Official Music Video)',
     artist: 'Miley Cyrus',
     duration: '3:20',
@@ -132,6 +137,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'dvgZkm1xWPE',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a3/30/8e/a3308eed-d8b7-e0b3-f09d-5e1b0f4d660a/mzaf_8517946447501075134.plus.aac.p.m4a',
     title: 'Viva La Vida (Official Video)',
     artist: 'Coldplay',
     duration: '4:02',
@@ -158,6 +164,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'U3ASj1L6_sY',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/08/30/4c08305e-0556-30a1-d1ba-2f916b56d62c/mzaf_10419822985277809788.plus.aac.p.m4a',
     title: 'Easy On Me (Official Music Video)',
     artist: 'Adele',
     duration: '3:44',
@@ -183,6 +190,7 @@ export const CURATED_TRACKS: Track[] = [
   },
   {
     id: 'TUVcZfQe-Kw',
+    audioUrl: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/dc/4d/59dc4dda-93ff-8f1c-c536-f005f6ea6af5/mzaf_3066686759813252385.plus.aac.p.m4a',
     title: 'Levitating (Official Music Video)',
     artist: 'Dua Lipa',
     duration: '3:23',
