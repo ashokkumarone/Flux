@@ -26,6 +26,7 @@ export interface Track {
   subscribers: string;
   publishedAt: string;
   audioBgGradient?: string;
+  audioUrl?: string;
   lyrics?: LyricLine[];
   comments: Comment[];
   isLive?: boolean;
