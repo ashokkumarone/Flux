@@ -8,7 +8,7 @@ A unified streaming platform that seamlessly bridges high-definition video watch
 
 <br>
 
-[**🚀 Launch Flux Live**](https://ashokkumarone.github.io/Flux/)&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;[**📄 Product Strategy Case Study (PDF)**](./strategy/Isaipadam_Product_Strategy_Case_Study.pdf)&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;[**🗄️ Architecture & Specs**](#-product-architecture)
+[**🚀 Launch Flux Live**](https://ashokkumarone.github.io/Flux/)&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;[**📄 Product Strategy Case Study (PDF)**](./strategy/Flux_Product_Strategy_Case_Study.pdf)&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;[**🗄️ Architecture & Specs**](#-product-architecture)
 
 <br>
 
@@ -120,7 +120,7 @@ flux/
 │   └── data/
 │       └── musicData.ts           # 100% verified working YouTube video & music catalog
 ├── strategy/
-│   └── Isaipadam_Product_Strategy_Case_Study.pdf # In-depth 20+ page product strategy document
+│   └── Flux_Product_Strategy_Case_Study.pdf # In-depth 20+ page product strategy document
 ├── vite.config.ts                 # Configured with base: '/Flux/' for GitHub Pages
 └── .github/workflows/deploy.yml   # Automated CI/CD pipeline on push to main
 ```
@@ -141,7 +141,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+
 
 <br>
 
